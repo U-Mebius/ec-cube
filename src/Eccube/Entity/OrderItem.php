@@ -22,7 +22,7 @@ if (!class_exists('\Eccube\Entity\OrderItem')) {
     /**
      * OrderItem
      *
-     * @ORM\Table(name="dtb_order_item")
+     * @ORM\Table(options={"comment": "受注明細"}, name="dtb_order_item")
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -130,7 +130,7 @@ if (!class_exists('\Eccube\Entity\OrderItem')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"受注明細ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -139,70 +139,70 @@ if (!class_exists('\Eccube\Entity\OrderItem')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="product_name", type="string", length=255)
+         * @ORM\Column(name="product_name", type="string", length=255, options={"comment":"商品名"})
          */
         private $product_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="product_code", type="string", length=255, nullable=true)
+         * @ORM\Column(name="product_code", type="string", length=255, nullable=true, options={"comment":"商品コード"})
          */
         private $product_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="class_name1", type="string", length=255, nullable=true)
+         * @ORM\Column(name="class_name1", type="string", length=255, nullable=true, options={"comment":"規格１"})
          */
         private $class_name1;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="class_name2", type="string", length=255, nullable=true)
+         * @ORM\Column(name="class_name2", type="string", length=255, nullable=true, options={"comment":"規格２"})
          */
         private $class_name2;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="class_category_name1", type="string", length=255, nullable=true)
+         * @ORM\Column(name="class_category_name1", type="string", length=255, nullable=true, options={"comment":"規格分類１"})
          */
         private $class_category_name1;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="class_category_name2", type="string", length=255, nullable=true)
+         * @ORM\Column(name="class_category_name2", type="string", length=255, nullable=true, options={"comment":"規格分類２"})
          */
         private $class_category_name2;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="price", type="decimal", precision=12, scale=2, options={"default":0})
+         * @ORM\Column(name="price", type="decimal", precision=12, scale=2, options={"default":0,"comment":"価格"})
          */
         private $price = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="quantity", type="decimal", precision=10, scale=0, options={"default":0})
+         * @ORM\Column(name="quantity", type="decimal", precision=10, scale=0, options={"default":0,"comment":"個数"})
          */
         private $quantity = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="tax", type="decimal", precision=10, scale=0, options={"default":0})
+         * @ORM\Column(name="tax", type="decimal", precision=10, scale=0, options={"default":0,"comment":"消費税"})
          */
         private $tax = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="tax_rate", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="tax_rate", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0,"comment":"消費税率"})
          */
         private $tax_rate = 0;
 
@@ -216,21 +216,21 @@ if (!class_exists('\Eccube\Entity\OrderItem')) {
         /**
          * @var int|null
          *
-         * @ORM\Column(name="tax_rule_id", type="smallint", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="tax_rule_id", type="smallint", nullable=true, options={"unsigned":true,"comment":"消費税率ID"})
          */
         private $tax_rule_id;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="currency_code", type="string", nullable=true)
+         * @ORM\Column(name="currency_code", type="string", nullable=true, options={"comment":"通貨"})
          */
         private $currency_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="processor_name", type="string", nullable=true)
+         * @ORM\Column(name="processor_name", type="string", nullable=true, options={"comment":"処理スクリプトの名前"})
          */
         private $processor_name;
 

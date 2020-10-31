@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Tag')) {
     /**
      * Tag
      *
-     * @ORM\Table(name="dtb_tag")
+     * @ORM\Table(name="dtb_tag",options={"comment": "タグ一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\Tag')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"タグID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -48,14 +48,14 @@ if (!class_exists('\Eccube\Entity\Tag')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="name", type="string", length=255)
+         * @ORM\Column(name="name", type="string", length=255, options={"comment":"名称"})
          */
         protected $name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment":"並び順"})
          */
         protected $sort_no;
 

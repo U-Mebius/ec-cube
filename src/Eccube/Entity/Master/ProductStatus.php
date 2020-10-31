@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * 商品の公開ステータス
  *
- * @ORM\Table(name="mtb_product_status")
+ * @ORM\Table(name="mtb_product_status", options={"comment" : "商品ステータス"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\DeliveryDuration')) {
     /**
      * DeliveryDuration
      *
-     * @ORM\Table(name="dtb_delivery_duration")
+     * @ORM\Table(name="dtb_delivery_duration",options={"comment": "配達日数"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -38,7 +38,7 @@ if (!class_exists('\Eccube\Entity\DeliveryDuration')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"配達日数ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -47,21 +47,21 @@ if (!class_exists('\Eccube\Entity\DeliveryDuration')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="name", type="string", length=255, nullable=true, options={"comment":"名称"})
          */
         private $name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="duration", type="smallint", options={"default":0})
+         * @ORM\Column(name="duration", type="smallint", options={"default":0, "unsigned":true, "comment":"日数"})
          */
         private $duration = 0;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="integer", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 

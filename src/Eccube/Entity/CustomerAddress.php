@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\CustomerAddress')) {
     /**
      * CustomerAddress
      *
-     * @ORM\Table(name="dtb_customer_address")
+     * @ORM\Table(name="dtb_customer_address", options={"comment": "お届け先"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -89,7 +89,7 @@ if (!class_exists('\Eccube\Entity\CustomerAddress')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -98,77 +98,77 @@ if (!class_exists('\Eccube\Entity\CustomerAddress')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name01", type="string", length=255)
+         * @ORM\Column(name="name01", type="string", length=255, options={"comment":"姓"})
          */
         private $name01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name02", type="string", length=255)
+         * @ORM\Column(name="name02", type="string", length=255, options={"comment":"名"})
          */
         private $name02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana01", type="string", length=255, nullable=true, options={"comment":"姓(カナ)"})
          */
         private $kana01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana02", type="string", length=255, nullable=true, options={"comment":"姓(メイ)"})
          */
         private $kana02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_name", type="string", length=255, nullable=true, options={"comment":"会社名"})
          */
         private $company_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true)
+         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true, options={"comment":"郵便番号"})
          */
         private $postal_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr01", type="string", length=255, nullable=true, options={"comment":"市区町村名"})
          */
         private $addr01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr02", type="string", length=255, nullable=true, options={"comment":"番地・ビル名"})
          */
         private $addr02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true)
+         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true, options={"comment":"電話番号"})
          */
         private $phone_number;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

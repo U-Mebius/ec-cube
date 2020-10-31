@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ProductImage')) {
     /**
      * ProductImage
      *
-     * @ORM\Table(name="dtb_product_image")
+     * @ORM\Table(name="dtb_product_image",options={"comment": "商品画像"},)
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -38,7 +38,7 @@ if (!class_exists('\Eccube\Entity\ProductImage')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"商品画像ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -47,21 +47,21 @@ if (!class_exists('\Eccube\Entity\ProductImage')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="file_name", type="string", length=255)
+         * @ORM\Column(name="file_name", type="string", length=255, options={"comment":"ファイル名"})
          */
         private $file_name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 

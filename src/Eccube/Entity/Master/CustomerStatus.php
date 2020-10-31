@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * CustomerStatus
  *
- * @ORM\Table(name="mtb_customer_status")
+ * @ORM\Table(name="mtb_customer_status", options={"comment" : "会員ステータス"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

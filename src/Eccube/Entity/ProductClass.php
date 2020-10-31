@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ProductClass')) {
     /**
      * ProductClass
      *
-     * @ORM\Table(name="dtb_product_class", indexes={@ORM\Index(name="dtb_product_class_price02_idx", columns={"price02"}), @ORM\Index(name="dtb_product_class_stock_stock_unlimited_idx", columns={"stock", "stock_unlimited"})})
+     * @ORM\Table(name="dtb_product_class", options={"comment": "商品規格"},indexes={@ORM\Index(name="dtb_product_class_price02_idx", columns={"price02"}), @ORM\Index(name="dtb_product_class_stock_stock_unlimited_idx", columns={"stock", "stock_unlimited"})})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -169,7 +169,7 @@ if (!class_exists('\Eccube\Entity\ProductClass')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"規格別商品ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -178,84 +178,84 @@ if (!class_exists('\Eccube\Entity\ProductClass')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="product_code", type="string", length=255, nullable=true)
+         * @ORM\Column(name="product_code", type="string", length=255, nullable=true, options={"comment":"商品コード"})
          */
         private $code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="stock", type="decimal", precision=10, scale=0, nullable=true)
+         * @ORM\Column(name="stock", type="decimal", precision=10, scale=0, nullable=true, options={"comment":"在庫数"})
          */
         private $stock;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="stock_unlimited", type="boolean", options={"default":false})
+         * @ORM\Column(name="stock_unlimited", type="boolean", options={"default":false, "comment":"在庫無制限フラグ"})
          */
         private $stock_unlimited = false;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="sale_limit", type="decimal", precision=10, scale=0, nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="sale_limit", type="decimal", precision=10, scale=0, nullable=true, options={"unsigned":true, "comment":"販売制限数"})
          */
         private $sale_limit;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="price01", type="decimal", precision=12, scale=2, nullable=true)
+         * @ORM\Column(name="price01", type="decimal", precision=12, scale=2, nullable=true, options={"comment":"通常価格"})
          */
         private $price01;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="price02", type="decimal", precision=12, scale=2)
+         * @ORM\Column(name="price02", type="decimal", precision=12, scale=2, options={"comment":"販売価格"})
          */
         private $price02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="delivery_fee", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="delivery_fee", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true, "comment":"商品別配送料"})
          */
         private $delivery_fee;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="visible", type="boolean", options={"default":true})
+         * @ORM\Column(name="visible", type="boolean", options={"default":true, "comment":"表示フラグ"})
          */
         private $visible;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="currency_code", type="string", nullable=true)
+         * @ORM\Column(name="currency_code", type="string", nullable=true, options={"comment":"通貨"})
          */
         private $currency_code;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="point_rate", type="decimal", precision=10, scale=0, options={"unsigned":true}, nullable=true)
+         * @ORM\Column(name="point_rate", type="decimal", precision=10, scale=0, options={"unsigned":true, "comment":"ポイント付与率"}, nullable=true)
          */
         private $point_rate;
 

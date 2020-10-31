@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ProductTag')) {
     /**
      * ProductTag
      *
-     * @ORM\Table(name="dtb_product_tag")
+     * @ORM\Table(name="dtb_product_tag",options={"comment": "商品とタグの紐付け"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -45,7 +45,7 @@ if (!class_exists('\Eccube\Entity\ProductTag')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"組み合わせID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -54,7 +54,7 @@ if (!class_exists('\Eccube\Entity\ProductTag')) {
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 

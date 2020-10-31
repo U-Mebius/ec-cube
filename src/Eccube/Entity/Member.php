@@ -22,7 +22,7 @@ if (!class_exists('\Eccube\Entity\Member')) {
     /**
      * Member
      *
-     * @ORM\Table(name="dtb_member")
+     * @ORM\Table(name="dtb_member", options={"comment": "管理ユーザー"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -72,7 +72,7 @@ if (!class_exists('\Eccube\Entity\Member')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"管理ユーザーID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -81,63 +81,63 @@ if (!class_exists('\Eccube\Entity\Member')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="name", type="string", length=255, nullable=true, options={"comment":"名前"})
          */
         private $name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="department", type="string", length=255, nullable=true)
+         * @ORM\Column(name="department", type="string", length=255, nullable=true, options={"comment":"部署名"})
          */
         private $department;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="login_id", type="string", length=255)
+         * @ORM\Column(name="login_id", type="string", length=255, options={"comment":"ログインID"})
          */
         private $login_id;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="password", type="string", length=255)
+         * @ORM\Column(name="password", type="string", length=255, options={"comment":"パスワード"})
          */
         private $password;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="salt", type="string", length=255, nullable=true)
+         * @ORM\Column(name="salt", type="string", length=255, nullable=true, options={"comment":"認証ソルト"})
          */
         private $salt;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="login_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="login_date", type="datetimetz", nullable=true, options={"comment":"ログイン日時"})
          */
         private $login_date;
 

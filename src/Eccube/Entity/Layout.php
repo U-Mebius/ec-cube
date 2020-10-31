@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Layout')) {
     /**
      * Layout
      *
-     * @ORM\Table(name="dtb_layout")
+     * @ORM\Table(name="dtb_layout", options={"comment": "レイアウト一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -215,7 +215,7 @@ if (!class_exists('\Eccube\Entity\Layout')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"レイアウトID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -224,21 +224,21 @@ if (!class_exists('\Eccube\Entity\Layout')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="layout_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="layout_name", type="string", length=255, nullable=true, options={"comment":"レイアウト名"})
          */
         private $name;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

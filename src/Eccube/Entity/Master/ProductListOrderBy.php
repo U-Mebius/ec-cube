@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ProductListOrderBy
  *
- * @ORM\Table(name="mtb_product_list_order_by")
+ * @ORM\Table(name="mtb_product_list_order_by", options={"comment" : "商品一覧表示順"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Work
  *
- * @ORM\Table(name="mtb_work")
+ * @ORM\Table(name="mtb_work", options={"comment" : "稼働状況"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

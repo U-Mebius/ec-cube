@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\News')) {
     /**
      * News
      *
-     * @ORM\Table(name="dtb_news")
+     * @ORM\Table(name="dtb_news", options={"comment" : "新着情報"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\News')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"新着情報ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -48,56 +48,56 @@ if (!class_exists('\Eccube\Entity\News')) {
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="publish_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="publish_date", type="datetimetz", nullable=true, options={"comment":"公開日"})
          */
         private $publish_date;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="title", type="string", length=255)
+         * @ORM\Column(name="title", type="string", length=255, options={"comment":"タイトル"})
          */
         private $title;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="description", type="text", nullable=true)
+         * @ORM\Column(name="description", type="text", nullable=true, options={"comment":"詳細"})
          */
         private $description;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="url", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="url", type="string", length=4000, nullable=true, options={"comment":"リンク先URL"})
          */
         private $url;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="link_method", type="boolean", options={"default":false})
+         * @ORM\Column(name="link_method", type="boolean", options={"default":false, "comment":"リンク方法"})
          */
         private $link_method = false;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="visible", type="boolean", options={"default":true})
+         * @ORM\Column(name="visible", type="boolean", options={"default":true, "comment":"表示フラグ"})
          */
         private $visible;
 

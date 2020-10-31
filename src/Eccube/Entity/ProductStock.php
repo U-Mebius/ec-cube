@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ProductStock')) {
     /**
      * ProductStock
      *
-     * @ORM\Table(name="dtb_product_stock")
+     * @ORM\Table(name="dtb_product_stock",options={"comment": "商品在庫"},)
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -62,7 +62,7 @@ if (!class_exists('\Eccube\Entity\ProductStock')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"在庫ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -71,21 +71,21 @@ if (!class_exists('\Eccube\Entity\ProductStock')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="stock", type="decimal", precision=10, scale=0, nullable=true)
+         * @ORM\Column(name="stock", type="decimal", precision=10, scale=0, nullable=true, options={"comment":"在庫数"})
          */
         private $stock;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

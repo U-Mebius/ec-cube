@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * RoundingType
  *
- * @ORM\Table(name="mtb_rounding_type")
+ * @ORM\Table(name="mtb_rounding_type", options={"comment" : "端数丸め方"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

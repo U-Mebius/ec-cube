@@ -20,7 +20,7 @@ if (!class_exists('\Eccube\Entity\Category')) {
     /**
      * Category
      *
-     * @ORM\Table(name="dtb_category")
+     * @ORM\Table(name="dtb_category", options={"comment":"カテゴリ"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -144,7 +144,7 @@ if (!class_exists('\Eccube\Entity\Category')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"カテゴリID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -153,35 +153,35 @@ if (!class_exists('\Eccube\Entity\Category')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="category_name", type="string", length=255)
+         * @ORM\Column(name="category_name", type="string", length=255, options={"comment":"名称"})
          */
         private $name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="hierarchy", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="hierarchy", type="integer", options={"unsigned":true, "comment":"階層"})
          */
         private $hierarchy;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="integer")
+         * @ORM\Column(name="sort_no", type="integer", options={"comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

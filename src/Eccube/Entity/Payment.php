@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Payment')) {
     /**
      * Payment
      *
-     * @ORM\Table(name="dtb_payment")
+     * @ORM\Table(name="dtb_payment", options={"comment":"支払方法"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -38,7 +38,7 @@ if (!class_exists('\Eccube\Entity\Payment')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"支払方法ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -47,77 +47,77 @@ if (!class_exists('\Eccube\Entity\Payment')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="payment_method", type="string", length=255, nullable=true)
+         * @ORM\Column(name="payment_method", type="string", length=255, nullable=true, options={"comment":"支払方法名"})
          */
         private $method;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="charge", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="charge", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true,"default":0,"comment":"手数料"})
          */
         private $charge = 0;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="rule_max", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="rule_max", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true,"comment":"最大適用金額"})
          */
         private $rule_max;
 
         /**
          * @var int|null
          *
-         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="fixed", type="boolean", options={"default":true})
+         * @ORM\Column(name="fixed", type="boolean", options={"default":true,"comment":"未使用"})
          */
         private $fixed = true;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="payment_image", type="string", length=255, nullable=true)
+         * @ORM\Column(name="payment_image", type="string", length=255, nullable=true, options={"comment":"支払方法画像"})
          */
         private $payment_image;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="rule_min", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="rule_min", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true,"comment":"最小適用金額"})
          */
         private $rule_min;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="method_class", type="string", length=255, nullable=true)
+         * @ORM\Column(name="method_class", type="string", length=255, nullable=true, options={"comment":"内部処理クラス"})
          */
         private $method_class;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="visible", type="boolean", options={"default":true})
+         * @ORM\Column(name="visible", type="boolean", options={"default":true, "comment":"表示フラグ"})
          */
         private $visible;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

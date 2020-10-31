@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DeviceType
  *
- * @ORM\Table(name="mtb_device_type")
+ * @ORM\Table(name="mtb_device_type", options={"comment" : "デバイス"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

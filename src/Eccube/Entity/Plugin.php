@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Plugin')) {
     /**
      * Plugin
      *
-     * @ORM\Table(name="dtb_plugin")
+     * @ORM\Table(name="dtb_plugin", options={"comment":"プラグイン一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\Plugin')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"プラグインID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -39,55 +39,55 @@ if (!class_exists('\Eccube\Entity\Plugin')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="name", type="string", length=255)
+         * @ORM\Column(name="name", type="string", length=255, options={"comment":"名称"})
          */
         private $name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="code", type="string", length=255)
+         * @ORM\Column(name="code", type="string", length=255, options={"comment":"プラグインコード"})
          */
         private $code;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="enabled", type="boolean", options={"default":false})
+         * @ORM\Column(name="enabled", type="boolean", options={"default":false, "comment":"有効フラグ"})
          */
         private $enabled = false;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="version", type="string", length=255)
+         * @ORM\Column(name="version", type="string", length=255, options={"comment":"バージョン"})
          */
         private $version;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="source", type="string", length=255)
+         * @ORM\Column(name="source", type="string", length=255, options={"comment":"DL元"})
          */
         private $source;
 
         /**
          * @var boolean
-         * @ORM\Column(name="initialized", type="boolean", options={"default":false})
+         * @ORM\Column(name="initialized", type="boolean", options={"default":false, "comment":"インストール済みフラグ"})
          */
         private $initialized = false;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

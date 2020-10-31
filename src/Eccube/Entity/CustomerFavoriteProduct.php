@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\CustomerFavoriteProduct')) {
     /**
      * CustomerFavoriteProduct
      *
-     * @ORM\Table(name="dtb_customer_favorite_product")
+     * @ORM\Table(name="dtb_customer_favorite_product", options={"comment": "お気に入り商品一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\CustomerFavoriteProduct')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"お気に入りID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -39,14 +39,14 @@ if (!class_exists('\Eccube\Entity\CustomerFavoriteProduct')) {
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

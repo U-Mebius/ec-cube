@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\PageLayout')) {
     /**
      * PageLayout
      *
-     * @ORM\Table(name="dtb_page_layout")
+     * @ORM\Table(name="dtb_page_layout", options={"comment":"レイアウトとページの紐付け"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\PageLayout')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="page_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="page_id", type="integer", options={"unsigned":true, "comment":"ページID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\PageLayout')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="layout_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="layout_id", type="integer", options={"unsigned":true, "comment":"レイアウトID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -48,7 +48,7 @@ if (!class_exists('\Eccube\Entity\PageLayout')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 

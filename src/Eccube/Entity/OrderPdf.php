@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\OrderPdf')) {
     /**
      * OrderPdf
      *
-     * @ORM\Table(name="dtb_order_pdf")
+     * @ORM\Table(name="dtb_order_pdf", options={"comment": "納品書PDF"},)
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\Entity(repositoryClass="Eccube\Repository\OrderPdfRepository")
@@ -35,7 +35,7 @@ if (!class_exists('\Eccube\Entity\OrderPdf')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="member_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="member_id", type="integer", options={"unsigned":true, "comment":"作成者ID"})
          * @ORM\Id
          */
         private $member_id;
@@ -43,70 +43,70 @@ if (!class_exists('\Eccube\Entity\OrderPdf')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="title", type="string", nullable=true)
+         * @ORM\Column(name="title", type="string", nullable=true, options={ "comment":"タイトル"})
          */
         private $title;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="message1", type="string", nullable=true)
+         * @ORM\Column(name="message1", type="string", nullable=true, options={ "comment":"メッセージ１"})
          */
         private $message1;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="message2", type="string", nullable=true)
+         * @ORM\Column(name="message2", type="string", nullable=true, options={ "comment":"メッセージ２"})
          */
         private $message2;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="message3", type="string", nullable=true)
+         * @ORM\Column(name="message3", type="string", nullable=true, options={ "comment":"メッセージ３"})
          */
         private $message3;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="note1", type="string", nullable=true)
+         * @ORM\Column(name="note1", type="string", nullable=true, options={ "comment":"備考欄１"})
          */
         private $note1;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="note2", type="string", nullable=true)
+         * @ORM\Column(name="note2", type="string", nullable=true, options={ "comment":"備考欄２"})
          */
         private $note2;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="note3", type="string", nullable=true)
+         * @ORM\Column(name="note3", type="string", nullable=true, options={ "comment":"備考欄３"})
          */
         private $note3;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="visible", type="boolean", options={"default":true})
+         * @ORM\Column(name="visible", type="boolean", options={"default":true, "comment":"表示フラグ"})
          */
         private $visible = true;
 

@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\MailHistory')) {
     /**
      * MailHistory
      *
-     * @ORM\Table(name="dtb_mail_history")
+     * @ORM\Table(name="dtb_mail_history", options={"comment": "注文メール履歴"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -38,7 +38,7 @@ if (!class_exists('\Eccube\Entity\MailHistory')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"メール履歴ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -47,28 +47,28 @@ if (!class_exists('\Eccube\Entity\MailHistory')) {
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="send_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="send_date", type="datetimetz", nullable=true, options={"comment":"送信日時"})
          */
         private $send_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="mail_subject", type="string", length=255, nullable=true)
+         * @ORM\Column(name="mail_subject", type="string", length=255, nullable=true, options={"comment":"題名"})
          */
         private $mail_subject;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="mail_body", type="text", nullable=true)
+         * @ORM\Column(name="mail_body", type="text", nullable=true, options={"comment":"本文"})
          */
         private $mail_body;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="mail_html_body", type="text", nullable=true)
+         * @ORM\Column(name="mail_html_body", type="text", nullable=true, options={"comment":"HTML本文"})
          */
         private $mail_html_body;
 

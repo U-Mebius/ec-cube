@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderStatusColor
  *
- * @ORM\Table(name="mtb_order_status_color")
+ * @ORM\Table(name="mtb_order_status_color", options={"comment" : "受注状況色分け"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

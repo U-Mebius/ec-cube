@@ -24,7 +24,7 @@ if (!class_exists('\Eccube\Entity\Order')) {
     /**
      * Order
      *
-     * @ORM\Table(name="dtb_order", indexes={
+     * @ORM\Table( options={"comment": "受注"}, name="dtb_order", indexes={
      *     @ORM\Index(name="dtb_order_email_idx", columns={"email"}),
      *     @ORM\Index(name="dtb_order_order_date_idx", columns={"order_date"}),
      *     @ORM\Index(name="dtb_order_payment_date_idx", columns={"payment_date"}),
@@ -240,7 +240,7 @@ if (!class_exists('\Eccube\Entity\Order')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"受注ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -249,133 +249,133 @@ if (!class_exists('\Eccube\Entity\Order')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="pre_order_id", type="string", length=255, nullable=true)
+         * @ORM\Column(name="pre_order_id", type="string", length=255, nullable=true, options={ "comment":"注文前の受注ID"})
          */
         private $pre_order_id;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="order_no", type="string", length=255, nullable=true)
+         * @ORM\Column(name="order_no", type="string", length=255, nullable=true, options={ "comment":"注文番号"})
          */
         private $order_no;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="message", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="message", type="string", length=4000, nullable=true, options={ "comment":"購入者からのメッセージ"})
          */
         private $message;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name01", type="string", length=255)
+         * @ORM\Column(name="name01", type="string", length=255, options={"comment":"姓"})
          */
         private $name01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="name02", type="string", length=255)
+         * @ORM\Column(name="name02", type="string", length=255, options={"comment":"名"})
          */
         private $name02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana01", type="string", length=255, nullable=true, options={"comment":"姓(カナ)"})
          */
         private $kana01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana02", type="string", length=255, nullable=true, options={"comment":"姓(メイ)"})
          */
         private $kana02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_name", type="string", length=255, nullable=true, options={"comment":"会社名"})
          */
         private $company_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="email", type="string", length=255, nullable=true)
+         * @ORM\Column(name="email", type="string", length=255, nullable=true, options={"comment":"メールアドレス"})
          */
         private $email;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true)
+         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true, options={"comment":"電話番号"})
          */
         private $phone_number;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true)
+         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true, options={"comment":"郵便番号"})
          */
         private $postal_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr01", type="string", length=255, nullable=true, options={"comment":"市区町村名"})
          */
         private $addr01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr02", type="string", length=255, nullable=true, options={"comment":"番地・ビル名"})
          */
         private $addr02;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="birth", type="datetimetz", nullable=true)
+         * @ORM\Column(name="birth", type="datetimetz", nullable=true, options={"comment":"誕生日"})
          */
         private $birth;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="subtotal", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="subtotal", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0, "comment":"商品合計金額"})
          */
         private $subtotal = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="discount", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="discount", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0, "comment":"値引額"})
          */
         private $discount = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="delivery_fee_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="delivery_fee_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"送料合計"})
          */
         private $delivery_fee_total = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="charge", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="charge", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"手数料"})
          */
         private $charge = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="tax", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="tax", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"消費税"})
          *
          * @deprecated 明細ごとに集計した税額と差異が発生する場合があるため非推奨
          */
@@ -384,63 +384,63 @@ if (!class_exists('\Eccube\Entity\Order')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"合計額"})
          */
         private $total = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="payment_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="payment_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"合計額"})
          */
         private $payment_total = 0;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="payment_method", type="string", length=255, nullable=true)
+         * @ORM\Column(name="payment_method", type="string", length=255, nullable=true, options={"comment":"支払方法名称"})
          */
         private $payment_method;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="note", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="note", type="string", length=4000, nullable=true, options={"comment":"備考"})
          */
         private $note;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="order_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="order_date", type="datetimetz", nullable=true, options={"comment":"注文日時"})
          */
         private $order_date;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="payment_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="payment_date", type="datetimetz", nullable=true, options={"comment":"支払日時"})
          */
         private $payment_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="currency_code", type="string", nullable=true)
+         * @ORM\Column(name="currency_code", type="string", nullable=true, options={"comment":"通貨"})
          */
         private $currency_code;
 
@@ -453,7 +453,7 @@ if (!class_exists('\Eccube\Entity\Order')) {
          *
          * @var string|null
          *
-         * @ORM\Column(name="complete_message", type="text", nullable=true)
+         * @ORM\Column(name="complete_message", type="text", nullable=true, options={"comment":"購入完了画面メッセージ"})
          */
         private $complete_message;
 
@@ -465,7 +465,7 @@ if (!class_exists('\Eccube\Entity\Order')) {
          *
          * @var string|null
          *
-         * @ORM\Column(name="complete_mail_message", type="text", nullable=true)
+         * @ORM\Column(name="complete_mail_message", type="text", nullable=true, options={"comment":"購入完了メールメッセージ"})
          */
         private $complete_mail_message;
 

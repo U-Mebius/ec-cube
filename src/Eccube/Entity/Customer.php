@@ -22,7 +22,7 @@ if (!class_exists('\Eccube\Entity\Customer')) {
     /**
      * Customer
      *
-     * @ORM\Table(name="dtb_customer", uniqueConstraints={@ORM\UniqueConstraint(name="secret_key", columns={"secret_key"})}, indexes={@ORM\Index(name="dtb_customer_buy_times_idx", columns={"buy_times"}), @ORM\Index(name="dtb_customer_buy_total_idx", columns={"buy_total"}), @ORM\Index(name="dtb_customer_create_date_idx", columns={"create_date"}), @ORM\Index(name="dtb_customer_update_date_idx", columns={"update_date"}), @ORM\Index(name="dtb_customer_last_buy_date_idx", columns={"last_buy_date"}), @ORM\Index(name="dtb_customer_email_idx", columns={"email"})})
+     * @ORM\Table(name="dtb_customer", options={"comment":"会員"}, uniqueConstraints={@ORM\UniqueConstraint(name="secret_key", columns={"secret_key"})}, indexes={@ORM\Index(name="dtb_customer_buy_times_idx", columns={"buy_times"}), @ORM\Index(name="dtb_customer_buy_total_idx", columns={"buy_total"}), @ORM\Index(name="dtb_customer_create_date_idx", columns={"create_date"}), @ORM\Index(name="dtb_customer_update_date_idx", columns={"update_date"}), @ORM\Index(name="dtb_customer_last_buy_date_idx", columns={"last_buy_date"}), @ORM\Index(name="dtb_customer_email_idx", columns={"email"})})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -33,7 +33,7 @@ if (!class_exists('\Eccube\Entity\Customer')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -42,168 +42,168 @@ if (!class_exists('\Eccube\Entity\Customer')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="name01", type="string", length=255)
+         * @ORM\Column(name="name01", type="string", length=255, options={"comment":"姓"})
          */
         private $name01;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="name02", type="string", length=255)
+         * @ORM\Column(name="name02", type="string", length=255, options={"comment":"名"})
          */
         private $name02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana01", type="string", length=255, nullable=true, options={"comment":"姓(カナ)"})
          */
         private $kana01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="kana02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana02", type="string", length=255, nullable=true, options={"comment":"姓(メイ)"})
          */
         private $kana02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_name", type="string", length=255, nullable=true, options={"comment":"会社名"})
          */
         private $company_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true)
+         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true, options={"comment":"郵便番号"})
          */
         private $postal_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr01", type="string", length=255, nullable=true, options={"comment":"市区町村名"})
          */
         private $addr01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr02", type="string", length=255, nullable=true, options={"comment":"番地・ビル名"})
          */
         private $addr02;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="email", type="string", length=255)
+         * @ORM\Column(name="email", type="string", length=255, options={"comment":"メールアドレス"})
          */
         private $email;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true)
+         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true, options={"comment":"電話番号"})
          */
         private $phone_number;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="birth", type="datetimetz", nullable=true)
+         * @ORM\Column(name="birth", type="datetimetz", nullable=true, options={"comment":"誕生日"})
          */
         private $birth;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="password", type="string", length=255)
+         * @ORM\Column(name="password", type="string", length=255, options={"comment":"パスワード"})
          */
         private $password;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="salt", type="string", length=255, nullable=true)
+         * @ORM\Column(name="salt", type="string", length=255, nullable=true, options={"comment":"パスワード認証のソルト"})
          */
         private $salt;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="secret_key", type="string", length=255)
+         * @ORM\Column(name="secret_key", type="string", length=255, options={"comment":"会員登録時の認証キー"})
          */
         private $secret_key;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="first_buy_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="first_buy_date", type="datetimetz", nullable=true, options={"comment":"初回購入日"})
          */
         private $first_buy_date;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="last_buy_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="last_buy_date", type="datetimetz", nullable=true, options={"comment":"最終購入日"})
          */
         private $last_buy_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="buy_times", type="decimal", precision=10, scale=0, nullable=true, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="buy_times", type="decimal", precision=10, scale=0, nullable=true, options={"comment":"購入回数","unsigned":true,"default":0})
          */
         private $buy_times = 0;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="buy_total", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="buy_total", type="decimal", precision=12, scale=2, nullable=true, options={"comment":"購入金額","unsigned":true,"default":0})
          */
         private $buy_total = 0;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="note", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="note", type="string", length=4000, nullable=true, options={"comment":"備考"})
          */
         private $note;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="reset_key", type="string", length=255, nullable=true)
+         * @ORM\Column(name="reset_key", type="string", length=255, nullable=true, options={"comment":"パスワード再設定時の認証キー"})
          */
         private $reset_key;
 
         /**
          * @var \DateTime|null
          *
-         * @ORM\Column(name="reset_expire", type="datetimetz", nullable=true)
+         * @ORM\Column(name="reset_expire", type="datetimetz", nullable=true, options={"comment":"パスワード再設定時の有効期限"})
          */
         private $reset_expire;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="point", type="decimal", precision=12, scale=0, options={"unsigned":false,"default":0})
+         * @ORM\Column(name="point", type="decimal", precision=12, scale=0, options={"unsigned":false,"default":0,"comment":"ポイント数"})
          */
         private $point = '0';
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

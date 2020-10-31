@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * 消費税の課税区分
  *
- * @ORM\Table(name="mtb_tax_type")
+ * @ORM\Table(name="mtb_tax_type", options={"comment" : "消費税課税"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

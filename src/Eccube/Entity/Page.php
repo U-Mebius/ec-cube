@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Page')) {
     /**
      * Page
      *
-     * @ORM\Table(name="dtb_page", indexes={@ORM\Index(name="dtb_page_url_idx", columns={"url"})})
+     * @ORM\Table(name="dtb_page", indexes={@ORM\Index(name="dtb_page_url_idx", columns={"url"})}, options={"comment":"ページ一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -51,7 +51,7 @@ if (!class_exists('\Eccube\Entity\Page')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ページID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -60,77 +60,77 @@ if (!class_exists('\Eccube\Entity\Page')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="page_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="page_name", type="string", length=255, nullable=true, options={"comment":"ページ名"})
          */
         private $name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="url", type="string", length=255)
+         * @ORM\Column(name="url", type="string", length=255, options={"comment":"URL名称"})
          */
         private $url;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="file_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="file_name", type="string", length=255, nullable=true, options={"comment":"ファイル名"})
          */
         private $file_name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="edit_type", type="smallint", options={"unsigned":true,"default":1})
+         * @ORM\Column(name="edit_type", type="smallint", options={"unsigned":true,"default":1,"comment":"編集可フラグ"})
          */
         private $edit_type = 1;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="author", type="string", length=255, nullable=true)
+         * @ORM\Column(name="author", type="string", length=255, nullable=true, options={"comment":"Author(メタタグ)"})
          */
         private $author;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="description", type="string", length=255, nullable=true)
+         * @ORM\Column(name="description", type="string", length=255, nullable=true, options={"comment":"Description(メタタグ)"})
          */
         private $description;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="keyword", type="string", length=255, nullable=true)
+         * @ORM\Column(name="keyword", type="string", length=255, nullable=true, options={"comment":"キーワード(メタタグ)"})
          */
         private $keyword;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="meta_robots", type="string", length=255, nullable=true)
+         * @ORM\Column(name="meta_robots", type="string", length=255, nullable=true, options={"comment":"robots(メタタグ)"})
          */
         private $meta_robots;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="meta_tags", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="meta_tags", type="string", length=4000, nullable=true, options={"comment":"その他メタタグ"})
          */
         private $meta_tags;
 

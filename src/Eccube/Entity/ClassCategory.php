@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ClassCategory')) {
     /**
      * ClassCategory
      *
-     * @ORM\Table(name="dtb_class_category")
+     * @ORM\Table(name="dtb_class_category", options={"comment":"規格分類"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -38,7 +38,7 @@ if (!class_exists('\Eccube\Entity\ClassCategory')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"規格分類ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -47,42 +47,42 @@ if (!class_exists('\Eccube\Entity\ClassCategory')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="backend_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="backend_name", type="string", length=255, nullable=true, options={"comment":"管理名"})
          */
         private $backend_name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="name", type="string", length=255)
+         * @ORM\Column(name="name", type="string", length=255, options={"comment":"名称"})
          */
         private $name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="integer", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="visible", type="boolean", options={"default":true})
+         * @ORM\Column(name="visible", type="boolean", options={"default":true, "comment":"表示フラグ"})
          */
         private $visible;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

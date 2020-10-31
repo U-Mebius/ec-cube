@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PageMax
  *
- * @ORM\Table(name="mtb_page_max")
+ * @ORM\Table(name="mtb_page_max", options={"comment" : "管理画面表示件数"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

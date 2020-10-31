@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * 受注明細種別
  *
- * @ORM\Table(name="mtb_order_item_type")
+ * @ORM\Table(name="mtb_order_item_type", options={"comment" : "受注明細種別"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

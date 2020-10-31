@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\BlockPosition')) {
     /**
      * BlockPosition
      *
-     * @ORM\Table(name="dtb_block_position")
+     * @ORM\Table(name="dtb_block_position",options={"comment": "ブロックの配置"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\BlockPosition')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="section", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="section", type="integer", options={"unsigned":true,  "comment":"配置セクション"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\BlockPosition')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="block_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="block_id", type="integer", options={"unsigned":true,  "comment":"ブロックID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -48,7 +48,7 @@ if (!class_exists('\Eccube\Entity\BlockPosition')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="layout_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="layout_id", type="integer", options={"unsigned":true,  "comment":"レイアウトID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -57,7 +57,7 @@ if (!class_exists('\Eccube\Entity\BlockPosition')) {
         /**
          * @var int|null
          *
-         * @ORM\Column(name="block_row", type="integer", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="block_row", type="integer", nullable=true, options={"unsigned":true, "comment":"表示位置"})
          */
         private $block_row;
 

@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Csv')) {
     /**
      * Csv
      *
-     * @ORM\Table(name="dtb_csv")
+     * @ORM\Table(name="dtb_csv", options={"comment":"CSV出力項目"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\Csv')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"CSV出力項目ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -39,56 +39,56 @@ if (!class_exists('\Eccube\Entity\Csv')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="entity_name", type="string", length=255)
+         * @ORM\Column(name="entity_name", type="string", length=255, options={"comment":"エンティティ名"})
          */
         private $entity_name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="field_name", type="string", length=255)
+         * @ORM\Column(name="field_name", type="string", length=255, options={"comment":"フィールド名"})
          */
         private $field_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="reference_field_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="reference_field_name", type="string", length=255, nullable=true, options={"comment":"エンティティからの参照フィールド名"})
          */
         private $reference_field_name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="disp_name", type="string", length=255)
+         * @ORM\Column(name="disp_name", type="string", length=255, options={"comment":"表示名"})
          */
         private $disp_name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="enabled", type="boolean", options={"default":true})
+         * @ORM\Column(name="enabled", type="boolean", options={"default":true, "comment":"有効フラグ"})
          */
         private $enabled = true;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

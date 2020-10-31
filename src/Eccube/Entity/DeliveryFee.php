@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\DeliveryFee')) {
     /**
      * DeliveryFee
      *
-     * @ORM\Table(name="dtb_delivery_fee")
+     * @ORM\Table(name="dtb_delivery_fee",options={"comment": "配送料金"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\DeliveryFee')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"配送料金ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\DeliveryFee')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="fee", type="decimal", precision=12, scale=2, options={"unsigned":true})
+         * @ORM\Column(name="fee", type="decimal", precision=12, scale=2, options={"unsigned":true, "comment":"料金"})
          */
         private $fee;
 

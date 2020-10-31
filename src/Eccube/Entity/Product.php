@@ -20,7 +20,7 @@ if (!class_exists('\Eccube\Entity\Product')) {
     /**
      * Product
      *
-     * @ORM\Table(name="dtb_product")
+     * @ORM\Table(name="dtb_product", options={"comment": "商品一覧"},)
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -446,7 +446,7 @@ if (!class_exists('\Eccube\Entity\Product')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"商品ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -455,56 +455,56 @@ if (!class_exists('\Eccube\Entity\Product')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="name", type="string", length=255)
+         * @ORM\Column(name="name", type="string", length=255, options={"comment":"商品名"})
          */
         private $name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="note", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="note", type="string", length=4000, nullable=true, options={"comment":"備考"})
          */
         private $note;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="description_list", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="description_list", type="string", length=4000, nullable=true, options={"comment" : "一覧ページ説明文"})
          */
         private $description_list;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="description_detail", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="description_detail", type="string", length=4000, nullable=true, options={"comment" : "詳細ページ説明文"})
          */
         private $description_detail;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="search_word", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="search_word", type="string", length=4000, nullable=true, options={"comment" : "検索キーワード"})
          */
         private $search_word;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="free_area", type="text", nullable=true)
+         * @ORM\Column(name="free_area", type="text", nullable=true, options={"comment" : "フリーエリア"})
          */
         private $free_area;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

@@ -20,7 +20,7 @@ trait PointTrait
     /**
      * @var string
      *
-     * @ORM\Column(name="add_point", type="decimal", precision=12, scale=0, options={"unsigned":true,"default":0})
+     * @ORM\Column(name="add_point", type="decimal", precision=12, scale=0, options={"unsigned":true,"default":0, "comment" : "付与ポイント"})
      */
     private $add_point = '0';
 

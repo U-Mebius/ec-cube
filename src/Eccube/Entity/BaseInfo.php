@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\BaseInfo')) {
     /**
      * BaseInfo
      *
-     * @ORM\Table(name="dtb_base_info")
+     * @ORM\Table(name="dtb_base_info", options={"comment": "基本情報"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -31,7 +31,7 @@ if (!class_exists('\Eccube\Entity\BaseInfo')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -40,189 +40,189 @@ if (!class_exists('\Eccube\Entity\BaseInfo')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_name", type="string", length=255, nullable=true, options={"comment":"会社名"})
          */
         private $company_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_kana", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_kana", type="string", length=255, nullable=true, options={"comment":"会社名カナ"})
          */
         private $company_kana;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true)
+         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true, options={"comment":"郵便番号"})
          */
         private $postal_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr01", type="string", length=255, nullable=true, options={"comment":"市区町村名"})
          */
         private $addr01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr02", type="string", length=255, nullable=true, options={"comment":"番地・ビル名"})
          */
         private $addr02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true)
+         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true, options={"comment":"電話番号"})
          */
         private $phone_number;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="business_hour", type="string", length=255, nullable=true)
+         * @ORM\Column(name="business_hour", type="string", length=255, nullable=true, options={"comment":"営業時間"})
          */
         private $business_hour;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="email01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="email01", type="string", length=255, nullable=true, options={"comment":"メールアドレス1"})
          */
         private $email01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="email02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="email02", type="string", length=255, nullable=true, options={"comment":"メールアドレス2"})
          */
         private $email02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="email03", type="string", length=255, nullable=true)
+         * @ORM\Column(name="email03", type="string", length=255, nullable=true, options={"comment":"メールアドレス3"})
          */
         private $email03;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="email04", type="string", length=255, nullable=true)
+         * @ORM\Column(name="email04", type="string", length=255, nullable=true, options={"comment":"メールアドレス4"})
          */
         private $email04;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="shop_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="shop_name", type="string", length=255, nullable=true, options={"comment":"店名"})
          */
         private $shop_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="shop_kana", type="string", length=255, nullable=true)
+         * @ORM\Column(name="shop_kana", type="string", length=255, nullable=true, options={"comment":"店名(カナ)"})
          */
         private $shop_kana;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="shop_name_eng", type="string", length=255, nullable=true)
+         * @ORM\Column(name="shop_name_eng", type="string", length=255, nullable=true, options={"comment":"店名(英語)"})
          */
         private $shop_name_eng;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="good_traded", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="good_traded", type="string", length=4000, nullable=true, options={"comment":"取扱商品"})
          */
         private $good_traded;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="message", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="message", type="string", length=4000, nullable=true, options={"comment":"メッセージ"})
          */
         private $message;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="delivery_free_amount", type="decimal", precision=12, scale=2, nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="delivery_free_amount", type="decimal", precision=12, scale=2, nullable=true, options={"comment":"送料無料金額", "unsigned":true})
          */
         private $delivery_free_amount;
 
         /**
          * @var int|null
          *
-         * @ORM\Column(name="delivery_free_quantity", type="integer", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="delivery_free_quantity", type="integer", nullable=true, options={"comment":"送料無料個数","unsigned":true})
          */
         private $delivery_free_quantity;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_mypage_order_status_display", type="boolean", options={"default":true})
+         * @ORM\Column(name="option_mypage_order_status_display", type="boolean", options={"default":true,"comment":"マイページに受注ステータスを表示するかどうか"})
          */
         private $option_mypage_order_status_display = true;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_nostock_hidden", type="boolean", options={"default":false})
+         * @ORM\Column(name="option_nostock_hidden", type="boolean", options={"default":false,"comment":"在庫がない商品を非表示にするか"})
          */
         private $option_nostock_hidden = false;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_favorite_product", type="boolean", options={"default":true})
+         * @ORM\Column(name="option_favorite_product", type="boolean", options={"default":true,"comment":"お気に入り機能を有効にする"})
          */
         private $option_favorite_product = true;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_product_delivery_fee", type="boolean", options={"default":false})
+         * @ORM\Column(name="option_product_delivery_fee", type="boolean", options={"default":false,"comment":"商品ごとの送料を有効にする"})
          */
         private $option_product_delivery_fee = false;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_product_tax_rule", type="boolean", options={"default":false})
+         * @ORM\Column(name="option_product_tax_rule", type="boolean", options={"default":false,"comment":"税率を有効にする"})
          */
         private $option_product_tax_rule = false;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_customer_activate", type="boolean", options={"default":true})
+         * @ORM\Column(name="option_customer_activate", type="boolean", options={"default":true,"comment":"会員のメール認証を有効にする"})
          */
         private $option_customer_activate = true;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_remember_me", type="boolean", options={"default":true})
+         * @ORM\Column(name="option_remember_me", type="boolean", options={"default":true,"comment":"ログインの記憶を有効にする"})
          */
         private $option_remember_me = true;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="authentication_key", type="string", length=255, nullable=true)
+         * @ORM\Column(name="authentication_key", type="string", length=255, nullable=true,options={"comment":"オーナーズストア の認証キー"})
          */
         private $authentication_key;
 
@@ -230,28 +230,28 @@ if (!class_exists('\Eccube\Entity\BaseInfo')) {
          * @var string|null
          * @deprecated 使用していないため、削除予定
          *
-         * @ORM\Column(name="php_path", type="string", length=255, nullable=true)
+         * @ORM\Column(name="php_path", type="string", length=255, nullable=true,options={"comment":"未使用"})
          */
         private $php_path;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="option_point", type="boolean", options={"default":true})
+         * @ORM\Column(name="option_point", type="boolean", options={"default":true, "comment":"ポイントを有効にする"})
          */
         private $option_point = true;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="basic_point_rate", type="decimal", precision=10, scale=0, options={"unsigned":true, "default":1}, nullable=true)
+         * @ORM\Column(name="basic_point_rate", type="decimal", precision=10, scale=0, options={"unsigned":true, "default":1, "comment":"基本ポイント付与率"}, nullable=true)
          */
         private $basic_point_rate = '1';
 
         /**
          * @var string
          *
-         * @ORM\Column(name="point_conversion_rate", type="decimal", precision=10, scale=0, options={"unsigned":true, "default":1}, nullable=true)
+         * @ORM\Column(name="point_conversion_rate", type="decimal", precision=10, scale=0, options={"unsigned":true, "default":1, "comment":"基本ポイント使用率"}, nullable=true)
          */
         private $point_conversion_rate = '1';
 

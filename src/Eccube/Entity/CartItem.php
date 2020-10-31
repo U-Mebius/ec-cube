@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\CartItem')) {
     /**
      * CartItem
      *
-     * @ORM\Table(name="dtb_cart_item")
+     * @ORM\Table(name="dtb_cart_item",options={"comment": "カート商品"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -32,7 +32,7 @@ if (!class_exists('\Eccube\Entity\CartItem')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"カート商品ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -41,14 +41,14 @@ if (!class_exists('\Eccube\Entity\CartItem')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="price", type="decimal", precision=12, scale=2, options={"default":0})
+         * @ORM\Column(name="price", type="decimal", precision=12, scale=2, options={"default":0, "comment":"価格"})
          */
         private $price = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="quantity", type="decimal", precision=10, scale=0, options={"default":0})
+         * @ORM\Column(name="quantity", type="decimal", precision=10, scale=0, options={"default":0, "comment":"個数"})
          */
         private $quantity = 0;
 

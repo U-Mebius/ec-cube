@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\PaymentOption')) {
     /**
      * PaymentOption
      *
-     * @ORM\Table(name="dtb_payment_option")
+     * @ORM\Table(name="dtb_payment_option", options={"comment":"配送方法と支払方法の紐付け"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\PaymentOption')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="delivery_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="delivery_id", type="integer", options={"unsigned":true,"comment":"配送方法ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\PaymentOption')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="payment_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="payment_id", type="integer", options={"unsigned":true,"comment":"支払方法ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */

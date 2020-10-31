@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * CsvType
  *
- * @ORM\Table(name="mtb_csv_type")
+ * @ORM\Table(name="mtb_csv_type", options={"comment" : "CSV種別"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

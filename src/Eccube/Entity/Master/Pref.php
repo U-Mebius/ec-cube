@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Pref
  *
- * @ORM\Table(name="mtb_pref")
+ * @ORM\Table(name="mtb_pref", options={"comment" : "都道府県"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()

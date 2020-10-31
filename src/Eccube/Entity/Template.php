@@ -51,7 +51,7 @@ if (!class_exists('\Eccube\Entity\Template')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -60,28 +60,28 @@ if (!class_exists('\Eccube\Entity\Template')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="template_code", type="string", length=255)
+         * @ORM\Column(name="template_code", type="string", length=255, options={ "comment":"コード"})
          */
         private $code;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="template_name", type="string", length=255)
+         * @ORM\Column(name="template_name", type="string", length=255, options={ "comment":"名称"})
          */
         private $name;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={ "comment":"登録日"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={ "comment":"更新日"})
          */
         private $update_date;
 

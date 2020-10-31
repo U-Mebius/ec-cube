@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\ProductCategory')) {
     /**
      * ProductCategory
      *
-     * @ORM\Table(name="dtb_product_category")
+     * @ORM\Table(name="dtb_product_category", options={"comment": "商品とカテゴリの紐付け"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\ProductCategory')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="product_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="product_id", type="integer", options={"unsigned":true, "comment":"商品ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */
@@ -39,7 +39,7 @@ if (!class_exists('\Eccube\Entity\ProductCategory')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="category_id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="category_id", type="integer", options={"unsigned":true, "comment":"カテゴリID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="NONE")
          */

@@ -21,7 +21,7 @@ if (!class_exists('\Eccube\Entity\Shipping')) {
     /**
      * Shipping
      *
-     * @ORM\Table(name="dtb_shipping")
+     * @ORM\Table(name="dtb_shipping",options={"comment": "配送"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -48,7 +48,7 @@ if (!class_exists('\Eccube\Entity\Shipping')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"配送ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -57,84 +57,84 @@ if (!class_exists('\Eccube\Entity\Shipping')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="name01", type="string", length=255)
+         * @ORM\Column(name="name01", type="string", length=255, options={"comment":"姓"})
          */
         private $name01;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="name02", type="string", length=255)
+         * @ORM\Column(name="name02", type="string", length=255, options={"comment":"名"})
          */
         private $name02;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="kana01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana01", type="string", length=255, nullable=true, options={"comment":"姓(カナ)"})
          */
         private $kana01;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="kana02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="kana02", type="string", length=255, nullable=true, options={"comment":"姓(メイ)"})
          */
         private $kana02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="company_name", type="string", length=255, nullable=true, options={"comment":"会社名"})
          */
         private $company_name;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true)
+         * @ORM\Column(name="phone_number", type="string", length=14, nullable=true, options={"comment":"電話番号"})
          */
         private $phone_number;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true)
+         * @ORM\Column(name="postal_code", type="string", length=8, nullable=true, options={"comment":"郵便番号"})
          */
         private $postal_code;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr01", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr01", type="string", length=255, nullable=true, options={"comment":"市区町村名"})
          */
         private $addr01;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="addr02", type="string", length=255, nullable=true)
+         * @ORM\Column(name="addr02", type="string", length=255, nullable=true, options={"comment":"番地・ビル名"})
          */
         private $addr02;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="delivery_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="delivery_name", type="string", length=255, nullable=true, options={"comment":"配送方法名"})
          */
         private $shipping_delivery_name;
 
         /**
          * @var int
          *
-         * @ORM\Column(name="time_id", type="integer", options={"unsigned":true}, nullable=true)
+         * @ORM\Column(name="time_id", type="integer", options={"unsigned":true, "comment":"配送時間ID"}, nullable=true)
          */
         private $time_id;
 
         /**
          * @var string|null
          *
-         * @ORM\Column(name="delivery_time", type="string", length=255, nullable=true)
+         * @ORM\Column(name="delivery_time", type="string", length=255, nullable=true, options={"comment":"配送時間"})
          */
         private $shipping_delivery_time;
 
@@ -143,7 +143,7 @@ if (!class_exists('\Eccube\Entity\Shipping')) {
          *
          * @var \DateTime|null
          *
-         * @ORM\Column(name="delivery_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="delivery_date", type="datetimetz", nullable=true, options={"comment":"お届け予定日"})
          */
         private $shipping_delivery_date;
 
@@ -152,49 +152,49 @@ if (!class_exists('\Eccube\Entity\Shipping')) {
          *
          * @var \DateTime|null
          *
-         * @ORM\Column(name="shipping_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="shipping_date", type="datetimetz", nullable=true, options={"comment":"出荷日"})
          */
         private $shipping_date;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="tracking_number", type="string", length=255, nullable=true)
+         * @ORM\Column(name="tracking_number", type="string", length=255, nullable=true, options={"comment":"追跡番号"})
          */
         private $tracking_number;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="note", type="string", length=4000, nullable=true)
+         * @ORM\Column(name="note", type="string", length=4000, nullable=true, options={"comment":"備考"})
          */
         private $note;
 
         /**
          * @var int|null
          *
-         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="mail_send_date", type="datetimetz", nullable=true)
+         * @ORM\Column(name="mail_send_date", type="datetimetz", nullable=true, options={"comment":"メール送信日時"})
          */
         private $mail_send_date;
 

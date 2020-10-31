@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\TaxRule')) {
     /**
      * TaxRule
      *
-     * @ORM\Table(name="dtb_tax_rule")
+     * @ORM\Table(name="dtb_tax_rule",options={"comment": "税率一覧"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -74,7 +74,7 @@ if (!class_exists('\Eccube\Entity\TaxRule')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"税率ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -83,35 +83,35 @@ if (!class_exists('\Eccube\Entity\TaxRule')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="tax_rate", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="tax_rate", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0, "comment":"税率"})
          */
         private $tax_rate = 0;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="tax_adjust", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="tax_adjust", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0, "comment":"調整額"})
          */
         private $tax_adjust = 0;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="apply_date", type="datetimetz")
+         * @ORM\Column(name="apply_date", type="datetimetz", options={ "comment":"適用日"})
          */
         private $apply_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

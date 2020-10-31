@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\AuthorityRole')) {
     /**
      * AuthorityRole
      *
-     * @ORM\Table(name="dtb_authority_role")
+     * @ORM\Table(name="dtb_authority_role", options={"comment":"アクセス禁止ルール"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -30,7 +30,7 @@ if (!class_exists('\Eccube\Entity\AuthorityRole')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"アクセス禁止ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -39,21 +39,21 @@ if (!class_exists('\Eccube\Entity\AuthorityRole')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="deny_url", type="string", length=4000)
+         * @ORM\Column(name="deny_url", type="string", length=4000, options={"comment":"アクセス禁止URL"})
          */
         private $deny_url;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

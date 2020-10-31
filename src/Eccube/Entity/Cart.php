@@ -22,7 +22,7 @@ if (!class_exists('\Eccube\Entity\Cart')) {
     /**
      * Cart
      *
-     * @ORM\Table(name="dtb_cart", indexes={
+     * @ORM\Table(name="dtb_cart",options={"comment": "カート"}, indexes={
      *     @ORM\Index(name="dtb_cart_update_date_idx", columns={"update_date"})
      *  },
      *  uniqueConstraints={
@@ -40,7 +40,7 @@ if (!class_exists('\Eccube\Entity\Cart')) {
         /**
          * @var integer
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"カートID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -49,7 +49,7 @@ if (!class_exists('\Eccube\Entity\Cart')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="cart_key", type="string", nullable=true)
+         * @ORM\Column(name="cart_key", type="string", nullable=true, options={"comment":"カートを特定するキー"})
          */
         private $cart_key;
 
@@ -78,42 +78,42 @@ if (!class_exists('\Eccube\Entity\Cart')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="pre_order_id", type="string", length=255, nullable=true)
+         * @ORM\Column(name="pre_order_id", type="string", length=255, nullable=true, options={"comment":"注文前の受注データのID"})
          */
         private $pre_order_id = null;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="total_price", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="total_price", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0, "comment":"合計金額"})
          */
         private $total_price;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="delivery_fee_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="delivery_fee_total", type="decimal", precision=12, scale=2, options={"unsigned":true,"default":0,"comment":"配送料金"})
          */
         private $delivery_fee_total;
 
         /**
          * @var int|null
          *
-         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true})
+         * @ORM\Column(name="sort_no", type="smallint", nullable=true, options={"unsigned":true, "comment":"並び順"})
          */
         private $sort_no;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 

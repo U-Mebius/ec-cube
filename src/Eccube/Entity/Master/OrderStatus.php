@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderStatus
  *
- * @ORM\Table(name="mtb_order_status")
+ * @ORM\Table(name="mtb_order_status", options={"comment" : "受注状況"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()
@@ -49,7 +49,7 @@ class OrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
      *
      * @var bool
      *
-     * @ORM\Column(name="display_order_count", type="boolean", options={"default":false})
+     * @ORM\Column(name="display_order_count", type="boolean", options={"default":false, "comment": "受注件数を表示するか"})
      */
     private $display_order_count = false;
 

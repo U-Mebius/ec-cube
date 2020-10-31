@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Block')) {
     /**
      * Block
      *
-     * @ORM\Table(name="dtb_block", uniqueConstraints={@ORM\UniqueConstraint(name="device_type_id", columns={"device_type_id", "file_name"})})
+     * @ORM\Table(name="dtb_block", options={"comment": "ブロック"},uniqueConstraints={@ORM\UniqueConstraint(name="device_type_id", columns={"device_type_id", "file_name"})})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -35,7 +35,7 @@ if (!class_exists('\Eccube\Entity\Block')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ブロックID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */
@@ -44,42 +44,42 @@ if (!class_exists('\Eccube\Entity\Block')) {
         /**
          * @var string|null
          *
-         * @ORM\Column(name="block_name", type="string", length=255, nullable=true)
+         * @ORM\Column(name="block_name", type="string", length=255, nullable=true, options={"comment":"名称"})
          */
         private $name;
 
         /**
          * @var string
          *
-         * @ORM\Column(name="file_name", type="string", length=255)
+         * @ORM\Column(name="file_name", type="string", length=255, options={"comment":"ファイル名"})
          */
         private $file_name;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="use_controller", type="boolean", options={"default":false})
+         * @ORM\Column(name="use_controller", type="boolean", options={"default":false, "comment":"動的ブロックかどうか"})
          */
         private $use_controller = false;
 
         /**
          * @var boolean
          *
-         * @ORM\Column(name="deletable", type="boolean", options={"default":true})
+         * @ORM\Column(name="deletable", type="boolean", options={"default":true, "comment":"削除可能かどうか"})
          */
         private $deletable = true;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="create_date", type="datetimetz")
+         * @ORM\Column(name="create_date", type="datetimetz", options={"comment":"登録日時"})
          */
         private $create_date;
 
         /**
          * @var \DateTime
          *
-         * @ORM\Column(name="update_date", type="datetimetz")
+         * @ORM\Column(name="update_date", type="datetimetz", options={"comment":"更新日時"})
          */
         private $update_date;
 
