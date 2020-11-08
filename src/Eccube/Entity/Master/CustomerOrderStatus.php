@@ -27,4 +27,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CustomerOrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"マイページ対応状況ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
 }

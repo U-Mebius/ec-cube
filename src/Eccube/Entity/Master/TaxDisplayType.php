@@ -30,6 +30,15 @@ use Doctrine\ORM\Mapping as ORM;
 class TaxDisplayType extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"消費税表示方式ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 税抜.
      *
      * @var integer

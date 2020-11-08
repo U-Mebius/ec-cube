@@ -209,7 +209,7 @@ if (!class_exists('\Eccube\Entity\OrderItem')) {
         /**
          * @var string
          *
-         * @ORM\Column(name="tax_adjust", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0})
+         * @ORM\Column(name="tax_adjust", type="decimal", precision=10, scale=0, options={"unsigned":true,"default":0, "comment":"調整額"})
          */
         private $tax_adjust = 0;
 

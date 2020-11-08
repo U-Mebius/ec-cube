@@ -31,7 +31,7 @@ if (!class_exists('\Eccube\Entity\BaseInfo')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"基本情報ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */

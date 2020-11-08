@@ -19,7 +19,7 @@ if (!class_exists('\Eccube\Entity\Template')) {
     /**
      * Template
      *
-     * @ORM\Table(name="dtb_template")
+     * @ORM\Table(name="dtb_template", options={"comment": "テンプレート"})
      * @ORM\InheritanceType("SINGLE_TABLE")
      * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
      * @ORM\HasLifecycleCallbacks()
@@ -51,7 +51,7 @@ if (!class_exists('\Eccube\Entity\Template')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"テンプレートID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */

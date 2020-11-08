@@ -27,7 +27,7 @@ trait PointTrait
     /**
      * @var string
      *
-     * @ORM\Column(name="use_point", type="decimal", precision=12, scale=0, options={"unsigned":true,"default":0})
+     * @ORM\Column(name="use_point", type="decimal", precision=12, scale=0, options={"unsigned":true,"default":0, "comment":"使用ポイント"})
      */
     private $use_point = '0';
 

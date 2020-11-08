@@ -27,4 +27,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ProductListMax extends \Eccube\Entity\Master\AbstractMasterEntity
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品一覧表示件数ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
 }

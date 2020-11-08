@@ -28,6 +28,15 @@ use Doctrine\ORM\Mapping as ORM;
 class CustomerStatus extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"会員ステータスID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 仮会員.
      *
      * @deprecated

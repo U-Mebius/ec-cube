@@ -32,6 +32,16 @@ use Doctrine\ORM\Mapping as ORM;
 class TaxType extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"消費税課税ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+
+    /**
      * 課税.
      *
      * 消費税は、国内において事業者が事業として対価を得て行う取引を課税の対象としています。

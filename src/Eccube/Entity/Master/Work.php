@@ -28,6 +28,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Work extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"稼働状況ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 非稼働
      */
     const NON_ACTIVE = 0;

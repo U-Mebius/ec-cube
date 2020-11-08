@@ -89,7 +89,7 @@ if (!class_exists('\Eccube\Entity\CustomerAddress')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"お届け先ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */

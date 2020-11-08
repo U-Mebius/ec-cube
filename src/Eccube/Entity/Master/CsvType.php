@@ -28,6 +28,15 @@ use Doctrine\ORM\Mapping as ORM;
 class CsvType extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"CSV種別ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * @var integer
      */
     const CSV_TYPE_PRODUCT = 1;

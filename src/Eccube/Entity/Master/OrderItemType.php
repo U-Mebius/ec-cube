@@ -30,6 +30,15 @@ use Doctrine\ORM\Mapping as ORM;
 class OrderItemType extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"受注明細種別ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 商品.
      *
      * @var integer

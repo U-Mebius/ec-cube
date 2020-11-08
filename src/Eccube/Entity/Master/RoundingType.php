@@ -28,6 +28,15 @@ use Doctrine\ORM\Mapping as ORM;
 class RoundingType extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"端数丸め方ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 四捨五入.
      *
      * @var integer

@@ -33,7 +33,7 @@ if (!class_exists('\Eccube\Entity\Customer')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"ID"})
+         * @ORM\Column(name="id", type="integer", options={"unsigned":true, "comment":"会員ID"})
          * @ORM\Id
          * @ORM\GeneratedValue(strategy="IDENTITY")
          */

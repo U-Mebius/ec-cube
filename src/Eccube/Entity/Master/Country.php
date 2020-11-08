@@ -27,4 +27,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Country extends \Eccube\Entity\Master\AbstractMasterEntity
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"国ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
 }

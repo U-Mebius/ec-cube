@@ -30,6 +30,15 @@ use Doctrine\ORM\Mapping as ORM;
 class ProductStatus extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品ステータスID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * 公開
      *
      * フロント画面: 表示されます。

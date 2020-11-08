@@ -28,6 +28,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Authority extends \Eccube\Entity\Master\AbstractMasterEntity
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"権限ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
+    /**
      * システム管理者
      */
     const ADMIN = 0;

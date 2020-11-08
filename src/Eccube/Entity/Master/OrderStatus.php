@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderStatus
  *
- * @ORM\Table(name="mtb_order_status", options={"comment" : "受注状況"})
+ * @ORM\Table(name="mtb_order_status", options={"comment" : "受注対応状況"})
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
  * @ORM\HasLifecycleCallbacks()
@@ -27,6 +27,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class OrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"受注対応状況ID"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    protected $id;
+
     /** 新規受付. */
     const NEW = 1;
     /** 注文取消し. */
