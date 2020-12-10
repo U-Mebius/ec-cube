@@ -42,14 +42,14 @@ abstract class AbstractMasterEntity extends \Eccube\Entity\AbstractEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, options={"comment": "名称"})
      */
     protected $name;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true})
+     * @ORM\Column(name="sort_no", type="smallint", options={"unsigned":true, "comment": "並び順"})
      */
     protected $sort_no;
 
