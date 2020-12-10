@@ -228,6 +228,7 @@ front.mypage.delivery: Delivery to
 front.mypage.delivery_provider: Delivery Method
 front.mypage.delivery_date: Delivery Date
 front.mypage.delivery_time: Delivery Time
+front.mypage.delivery.add.complete: The registration of the delivery address has been completed
 front.mypage.current_price: [Current Price]
 front.mypage.reorder: Reorder
 front.mypage.payment_info: Payment Info
@@ -243,6 +244,7 @@ front.mypage.favorite_not_found: No item found in Favorites.
 front.mypage.customer_address_count: '%count% items are registered in Delivery Addresses'
 front.mypage.customer_address_not_found: No address is found.
 front.mypage.add_customer_address: 'Add a New Address'
+front.mypage.address.delete.complete: The deletion of the delivery address has been completed
 front.mypage.withdraw_message__title: Make sure before you cancel your membership
 front.mypage.withdraw_message__body: Please note that all information in Order History and Delivery Addresses etc. will be deleted upon cancellation of your membership.
 front.mypage.withdraw_execute_message__title: Are you sure to cancel your membership?

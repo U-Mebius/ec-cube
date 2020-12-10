@@ -98,6 +98,9 @@ file that was distributed with this source code.
                 </div>
             {% endif %}
 
+            {# ALERT MESSAGE #}
+            {{ include('alert.twig') }}
+
             {# MAIN AREA #}
             {% block main %}{% endblock %}
 

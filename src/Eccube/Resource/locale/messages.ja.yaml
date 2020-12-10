@@ -228,6 +228,7 @@ front.mypage.delivery: お届け先
 front.mypage.delivery_provider: 配送方法
 front.mypage.delivery_date: お届け日
 front.mypage.delivery_time: お届け時間
+front.mypage.delivery.add.complete: お届け先の登録が完了いたしました
 front.mypage.current_price: 【現在価格】
 front.mypage.reorder: 再注文する
 front.mypage.payment_info: お支払い情報
@@ -243,6 +244,7 @@ front.mypage.favorite_not_found: お気に入りは登録されていません�
 front.mypage.customer_address_count: '%count%件のお届け先があります'
 front.mypage.customer_address_not_found: お届け先は登録されていません。
 front.mypage.add_customer_address: '新規お届け先を追加する'
+front.mypage.address.delete.complete: お届け先の削除が完了いたしました
 front.mypage.withdraw_message__title: 退会手続きの前にご確認ください
 front.mypage.withdraw_message__body: 退会手続きが完了した時点で、現在保存されている購入履歴やお届け先等の情報は、すべて削除されますのでご注意ください。
 front.mypage.withdraw_execute_message__title: 退会手続きを実行してもよろしいでしょうか？
