@@ -102,6 +102,9 @@ file that was distributed with this source code.
                 var tax_rate = $('#product_class_matrix_product_classes_0_tax_rate').val();
                 $('input[id$=_tax_rate]').val(tax_rate);
 
+                var point_rate = $('#product_class_matrix_product_classes_0_point_rate').val();
+                $('input[id$=_point_rate]').val(point_rate);
+
                 var sale_type = $('#product_class_matrix_product_classes_0_sale_type').val();
                 $('select[id$=_sale_type]').val(sale_type);
             });
@@ -263,6 +266,7 @@ file that was distributed with this source code.
                                     {% if BaseInfo.option_product_tax_rule %}
                                         <th class="pt-2 pb-2">{{ 'admin.product.tax_rate'|trans }}</th>
                                     {% endif %}
+                                    <th class="pt-2 pb-2">{{ 'admin.product.point_rate'|trans }}</th>
                                     <th class="pt-2 pb-2">{{ 'admin.product.delivery_duration'|trans }}</th>
                                     <th class="pt-2 pb-2 pr-3">{{ 'admin.product.sale_type'|trans }}</th>
 
@@ -335,6 +339,10 @@ file that was distributed with this source code.
                                                     {{ form_errors(product_class_form.tax_rate) }}
                                                 </td>
                                             {% endif %}
+                                            <td class="align-middle">
+                                                {{ form_widget(product_class_form.point_rate) }}
+                                                {{ form_errors(product_class_form.point_rate) }}
+                                            </td>
                                             <td class="align-middle">
                                                 {{ form_widget(product_class_form.delivery_duration) }}
                                                 {{ form_errors(product_class_form.delivery_duration) }}

@@ -120,6 +120,19 @@ class ProductClassType extends AbstractType
                 'required' => false,
                 'placeholder' => 'common.select__unspecified',
             ])
+            ->add('point_rate', NumberType::class, [
+                'required' => false,
+                'constraints' => [
+                    new Assert\Regex([
+                        'pattern' => "/^\d+$/u",
+                        'message' => 'form_error.numeric_only',
+                    ]),
+                    new Assert\Range([
+                        'min' => 0,
+                        'max' => 100,
+                    ]),
+                ],
+            ])
             ->addEventListener(FormEvents::POST_SUBMIT, function ($event) {
                 $form = $event->getForm();
                 $data = $form->getData();

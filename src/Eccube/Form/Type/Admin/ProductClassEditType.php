@@ -104,6 +104,9 @@ class ProductClassEditType extends AbstractType
             ->add('tax_rate', TextType::class, [
                 'required' => false,
             ])
+            ->add('point_rate', TextType::class, [
+                'required' => false,
+            ])
             ->add('delivery_fee', PriceType::class, [
                 'required' => false,
             ])
@@ -248,6 +251,19 @@ class ProductClassEditType extends AbstractType
                 ]),
             ]);
             $this->addErrors('tax_rate', $form, $errors);
+
+            // ポイント付与率
+            $errors = $this->validator->validate($data['point_rate'], [
+                new Assert\Regex([
+                    'pattern' => "/^\d+$/u",
+                    'message' => 'form_error.numeric_only',
+                ]),
+                new Assert\Range([
+                    'min' => 0,
+                    'max' => 100,
+                ]),
+            ]);
+            $this->addErrors('point_rate', $form, $errors);
 
             // 販売種別
             $errors = $this->validator->validate($data['sale_type'], [
