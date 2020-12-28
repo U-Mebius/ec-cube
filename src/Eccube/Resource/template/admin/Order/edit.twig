@@ -104,7 +104,13 @@ file that was distributed with this source code.
 
             // 商品追加
             $collectionHolder = $('#table-form-field');
-            index = $collectionHolder.find('tbody > tr').length;
+
+            {% if form.OrderItems|length and form.origin_order_item_index.vars.data < max(form.OrderItems|keys) %}
+            index = {{ max(form.OrderItems|keys) }};
+            {% else %}
+            index = {{ form.origin_order_item_index.vars.data }};
+            {% endif %}
+
             formIdPrefix = '#order_OrderItems_';
 
             $(document).on('click', '.delete', function(e) {
@@ -252,6 +258,7 @@ file that was distributed with this source code.
         <input type="hidden" name="modal" value="">
         {{ form_widget(form._token) }}
         {{ form_widget(form.return_link) }}
+        {{ form_widget(form.origin_order_item_index) }}
         <div class="c-contentsArea__cols">
             <div class="c-contentsArea__primaryCol">
                 <div class="c-primaryCol">

@@ -248,6 +248,7 @@ class OrderType extends AbstractType
         $builder->addEventListener(FormEvents::POST_SET_DATA, [$this, 'sortOrderItems']);
         $builder->addEventListener(FormEvents::POST_SET_DATA, [$this, 'addOrderStatusForm']);
         $builder->addEventListener(FormEvents::POST_SET_DATA, [$this, 'addShippingForm']);
+        $builder->addEventListener(FormEvents::POST_SET_DATA, [$this, 'addOriginOrderItemIndex']);
         $builder->addEventListener(FormEvents::POST_SUBMIT, [$this, 'copyFields']);
         $builder->addEventListener(FormEvents::POST_SUBMIT, [$this, 'validateOrderStatus']);
         $builder->addEventListener(FormEvents::POST_SUBMIT, [$this, 'validateOrderItems']);
@@ -458,6 +459,25 @@ class OrderType extends AbstractType
             $form = $event->getForm();
             $form['OrderItemsErrors']->addError(new FormError(trans('admin.order.product_item_not_found')));
         }
+    }
+
+    /**
+     * 受注明細の最大となるindexを追加しておく.
+     *
+     * @param FormEvent $event
+     */
+    public function addOriginOrderItemIndex(FormEvent $event)
+    {
+        $form = $event->getForm();
+
+        /** @var Order $Order */
+        $Order = $event->getData();
+        $keys = $Order->getOrderItems()->getKeys();
+
+        $form->add('origin_order_item_index', HiddenType::class, [
+            'mapped' => false,
+            'data' => 0 < count($keys) ? max($keys) : 0,
+        ]);
     }
 
     /**
