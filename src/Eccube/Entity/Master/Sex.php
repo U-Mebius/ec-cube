@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Sex
- *
- * @ORM\Table(name="mtb_sex", options={"comment" : "性別"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\SexRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class Sex extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(Sex::class, false)) {
     /**
-     * @var int
+     * Sex
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"性別ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_sex", options={"comment" : "性別"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\SexRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class Sex extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"性別ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

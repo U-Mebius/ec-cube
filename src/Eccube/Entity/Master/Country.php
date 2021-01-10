@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Country
- *
- * @ORM\Table(name="mtb_country", options={"comment" : "国"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\CountryRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class Country extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(Country::class, false)) {
     /**
-     * @var int
+     * Country
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"国ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_country", options={"comment" : "国"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\CountryRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class Country extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"国ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

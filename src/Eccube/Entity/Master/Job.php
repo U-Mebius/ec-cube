@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Job
- *
- * @ORM\Table(name="mtb_job", options={"comment" : "職業"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\JobRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class Job extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(Job::class, false)) {
     /**
-     * @var int
+     * Job
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"職業ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_job", options={"comment" : "職業"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\JobRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class Job extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"職業ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

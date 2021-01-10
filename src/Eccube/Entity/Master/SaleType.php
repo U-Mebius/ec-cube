@@ -15,29 +15,31 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * SaleType
- *
- * @ORM\Table(name="mtb_sale_type", options={"comment" : "販売種別"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\SaleTypeRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class SaleType extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(SaleType::class, false)) {
     /**
-     * @var int
+     * SaleType
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"販売種別ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_sale_type", options={"comment" : "販売種別"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\SaleTypeRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class SaleType extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"販売種別ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
 
-    /**
-     * @var integer
-     */
-    const SALE_TYPE_NORMAL = 1;
+        /**
+         * @var integer
+         */
+        const SALE_TYPE_NORMAL = 1;
+    }
 }

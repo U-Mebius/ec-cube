@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * ProductListOrderBy
- *
- * @ORM\Table(name="mtb_product_list_order_by", options={"comment" : "商品一覧表示順"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\ProductListOrderByRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class ProductListOrderBy extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(ProductListOrderBy::class, false)) {
     /**
-     * @var int
+     * ProductListOrderBy
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品一覧表示順ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_product_list_order_by", options={"comment" : "商品一覧表示順"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\ProductListOrderByRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class ProductListOrderBy extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品一覧表示順ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

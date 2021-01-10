@@ -15,6 +15,7 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
+if (!class_exists(Authority::class, false)) {
 /**
  * Authority
  *
@@ -41,8 +42,9 @@ class Authority extends \Eccube\Entity\Master\AbstractMasterEntity
      */
     const ADMIN = 0;
 
-    /**
-     * 店舗オーナー
-     */
-    const OWNER = 1;
+        /**
+         * 店舗オーナー
+         */
+        const OWNER = 1;
+    }
 }

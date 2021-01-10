@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Pref
- *
- * @ORM\Table(name="mtb_pref", options={"comment" : "都道府県"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\PrefRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class Pref extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(Pref::class, false)) {
     /**
-     * @var int
+     * Pref
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"都道府県ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_pref", options={"comment" : "都道府県"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\PrefRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class Pref extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"都道府県ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * PageMax
- *
- * @ORM\Table(name="mtb_page_max", options={"comment" : "管理画面表示件数"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\PageMaxRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class PageMax extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(PageMax::class, false)) {
     /**
-     * @var int
+     * PageMax
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"管理画面表示件数ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_page_max", options={"comment" : "管理画面表示件数"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\PageMaxRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class PageMax extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"管理画面表示件数ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

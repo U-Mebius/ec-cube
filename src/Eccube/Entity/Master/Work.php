@@ -15,34 +15,36 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Work
- *
- * @ORM\Table(name="mtb_work", options={"comment" : "稼働状況"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\WorkRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class Work extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(Work::class, false)) {
     /**
-     * @var int
+     * Work
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"稼働状況ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_work", options={"comment" : "稼働状況"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\WorkRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class Work extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"稼働状況ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
 
-    /**
-     * 非稼働
-     */
-    const NON_ACTIVE = 0;
+        /**
+         * 非稼働
+         */
+        const NON_ACTIVE = 0;
 
-    /**
-     * 稼働
-     */
-    const ACTIVE = 1;
+        /**
+         * 稼働
+         */
+        const ACTIVE = 1;
+    }
 }

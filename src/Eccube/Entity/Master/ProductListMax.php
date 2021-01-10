@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * ProductListMax
- *
- * @ORM\Table(name="mtb_product_list_max", options={"comment" : "商品一覧表示件数"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\ProductListMaxRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class ProductListMax extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(ProductListMax::class, false)) {
     /**
-     * @var int
+     * ProductListMax
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品一覧表示件数ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_product_list_max", options={"comment" : "商品一覧表示件数"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\ProductListMaxRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class ProductListMax extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"商品一覧表示件数ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

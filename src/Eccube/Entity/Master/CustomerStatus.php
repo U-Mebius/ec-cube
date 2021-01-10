@@ -15,6 +15,7 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
+if (!class_exists(CustomerStatus::class, false)) {
 /**
  * CustomerStatus
  *
@@ -43,25 +44,26 @@ class CustomerStatus extends \Eccube\Entity\Master\AbstractMasterEntity
      */
     const NONACTIVE = 1;
 
-    /**
-     * 本会員.
-     *
-     * @deprecated
-     */
-    const ACTIVE = 2;
+        /**
+         * 本会員.
+         *
+         * @deprecated
+         */
+        const ACTIVE = 2;
 
-    /**
-     * 仮会員.
-     */
-    const PROVISIONAL = 1;
+        /**
+         * 仮会員.
+         */
+        const PROVISIONAL = 1;
 
-    /**
-     * 本会員
-     */
-    const REGULAR = 2;
+        /**
+         * 本会員
+         */
+        const REGULAR = 2;
 
-    /**
-     * 退会
-     */
-    const WITHDRAWING = 3;
+        /**
+         * 退会
+         */
+        const WITHDRAWING = 3;
+    }
 }

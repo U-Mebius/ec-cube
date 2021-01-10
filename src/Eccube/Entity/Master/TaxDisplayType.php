@@ -15,6 +15,7 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
+if (!class_exists(TaxDisplayType::class, false)) {
 /**
  * TaxDisplayType
  *
@@ -45,10 +46,11 @@ class TaxDisplayType extends \Eccube\Entity\Master\AbstractMasterEntity
      */
     const EXCLUDED = 1;
 
-    /**
-     * 税込.
-     *
-     * @var integer
-     */
-    const INCLUDED = 2;
+        /**
+         * 税込.
+         *
+         * @var integer
+         */
+        const INCLUDED = 2;
+    }
 }

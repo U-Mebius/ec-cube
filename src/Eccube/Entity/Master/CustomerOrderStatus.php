@@ -15,24 +15,26 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * CustomerOrderStatus
- *
- * @ORM\Table(name="mtb_customer_order_status", options={"comment" : "マイページ注文状況"})
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
- * @ORM\HasLifecycleCallbacks()
- * @ORM\Entity(repositoryClass="Eccube\Repository\Master\CustomerOrderStatusRepository")
- * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
- */
-class CustomerOrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
-{
+if (!class_exists(CustomerOrderStatus::class, false)) {
     /**
-     * @var int
+     * CustomerOrderStatus
      *
-     * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"マイページ対応状況ID"})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Table(name="mtb_customer_order_status", options={"comment" : "マイページ注文状況"})
+     * @ORM\InheritanceType("SINGLE_TABLE")
+     * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+     * @ORM\HasLifecycleCallbacks()
+     * @ORM\Entity(repositoryClass="Eccube\Repository\Master\CustomerOrderStatusRepository")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
-    protected $id;
+    class CustomerOrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
+    {
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="smallint", options={"unsigned":true, "comment":"マイページ対応状況ID"})
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="NONE")
+         */
+        protected $id;
+    }
 }

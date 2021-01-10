@@ -15,6 +15,7 @@ namespace Eccube\Entity\Master;
 
 use Doctrine\ORM\Mapping as ORM;
 
+if (!class_exists(OrderStatus::class, false)) {
 /**
  * OrderStatus
  *
@@ -62,19 +63,20 @@ class OrderStatus extends \Eccube\Entity\Master\AbstractMasterEntity
      */
     private $display_order_count = false;
 
-    /**
-     * @return bool
-     */
-    public function isDisplayOrderCount()
-    {
-        return $this->display_order_count;
-    }
+        /**
+         * @return bool
+         */
+        public function isDisplayOrderCount()
+        {
+            return $this->display_order_count;
+        }
 
-    /**
-     * @param bool $display_order_count
-     */
-    public function setDisplayOrderCount($display_order_count = false)
-    {
-        $this->display_order_count = $display_order_count;
+        /**
+         * @param bool $display_order_count
+         */
+        public function setDisplayOrderCount($display_order_count = false)
+        {
+            $this->display_order_count = $display_order_count;
+        }
     }
 }
