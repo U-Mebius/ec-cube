@@ -54,7 +54,7 @@ if (!class_exists('\Eccube\Entity\DeliveryDuration')) {
         /**
          * @var int
          *
-         * @ORM\Column(name="duration", type="smallint", options={"default":0, "unsigned":true, "comment":"日数"})
+         * @ORM\Column(name="duration", type="smallint", options={"default":0, "comment":"日数"})
          */
         private $duration = 0;
 
