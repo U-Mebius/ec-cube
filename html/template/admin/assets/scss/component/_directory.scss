@@ -138,38 +138,77 @@ Styleguide 7.1
   max-height: 300px;
   overflow: scroll;
 
+  //全階層ラベル
+  ul  {
+    clear: both;
+
+    li {
+      clear: both;
+
+      input[type=checkbox], label {
+        min-height: 13px;
+      }
+
+      input[type=checkbox] {
+        float: left;
+        margin-top: 3px;
+      }
+
+      label {
+        margin-left: 18px;
+        width: calc(100% - 13px);
+        display: block;
+      }
+    }
+  }
   //2層目以降
   ul >li > ul {
     li > label {
-      margin-left: 10px;
+      margin-left: 18px + 10px;
     }
-    li:not(:last-of-type) > label::before {
-      margin-left: 2px;
-      margin-right: .5em;
-      content: "├";
-      display: inline-block;
-      width: 1em;
-      height: 1em;
+    li:not(:last-of-type) > label {
+      padding-left: 22px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: 2px;
+        margin-right: 7px;
+        content: "├";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
     }
 
-    li:last-of-type > label::before  {
-      margin-right: .6em;
-      content: "└";
-      display: inline-block;
-      width: 1em;
-      height: 1em;
+    li:last-of-type > label  {
+      padding-left: 22px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-right: 7px;
+        content: "└";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
     }
   }
   //3層目
   ul >li ul >li ul  {
     li > label {
-      margin-left: 20px;
+      margin-left: 18px + 20px;
     }
   }
   //4層目
   ul >li ul >li ul > li ul  {
     li > label {
-      margin-left: 30px;
+      margin-left: 18px + 30px;
     }
   }
 }

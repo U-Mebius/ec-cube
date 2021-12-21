@@ -818,25 +818,50 @@ Styleguide 7.1
 .c-directoryTree--register {
   max-height: 300px;
   overflow: scroll; }
+.c-directoryTree--register ul {
+    clear: both; }
+.c-directoryTree--register ul li {
+      clear: both; }
+.c-directoryTree--register ul li input[type=checkbox], .c-directoryTree--register ul li label {
+        min-height: 13px; }
+.c-directoryTree--register ul li input[type=checkbox] {
+        float: left;
+        margin-top: 3px; }
+.c-directoryTree--register ul li label {
+        margin-left: 18px;
+        width: calc(100% - 13px);
+        display: block; }
 .c-directoryTree--register ul > li > ul li > label {
-    margin-left: 10px; }
-.c-directoryTree--register ul > li > ul li:not(:last-of-type) > label::before {
-    margin-left: 2px;
-    margin-right: .5em;
-    content: "├";
-    display: inline-block;
-    width: 1em;
-    height: 1em; }
-.c-directoryTree--register ul > li > ul li:last-of-type > label::before {
-    margin-right: .6em;
-    content: "└";
-    display: inline-block;
-    width: 1em;
-    height: 1em; }
+    margin-left: 28px; }
+.c-directoryTree--register ul > li > ul li:not(:last-of-type) > label {
+    padding-left: 22px;
+    position: relative; }
+.c-directoryTree--register ul > li > ul li:not(:last-of-type) > label:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: 2px;
+      margin-right: 7px;
+      content: "├";
+      display: inline-block;
+      width: 1em;
+      height: 1em; }
+.c-directoryTree--register ul > li > ul li:last-of-type > label {
+    padding-left: 22px;
+    position: relative; }
+.c-directoryTree--register ul > li > ul li:last-of-type > label:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-right: 7px;
+      content: "└";
+      display: inline-block;
+      width: 1em;
+      height: 1em; }
 .c-directoryTree--register ul > li ul > li ul li > label {
-    margin-left: 20px; }
+    margin-left: 38px; }
 .c-directoryTree--register ul > li ul > li ul > li ul li > label {
-    margin-left: 30px; }
+    margin-left: 48px; }
 /*
 ディレクトリツリー（フォルダー）
 
