@@ -397,6 +397,9 @@ class ShoppingControllerTest extends AbstractShoppingControllerTestCase
 
         $this->assertTrue($this->client->getResponse()->isSuccessful());
         $this->expected = 'お支払い方法を選択してください。';
+
+        // ポイントのエラーになっている　修正必要
+
         $this->actual = $crawler->filter('p.ec-errorMessage')->text();
         $this->verify();
     }
